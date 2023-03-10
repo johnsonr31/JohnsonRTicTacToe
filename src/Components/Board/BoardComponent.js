@@ -3,6 +3,12 @@ import { useState } from "react";
 import './style.css'
 
 function Board({ xIsNext, squares, onPlay }) {
+
+  // const [show, setShow] = useState(false);
+
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
+
     function handleClick(i) {
       if (calculateWinner(squares) || squares[i]) {
         return;
@@ -20,6 +26,11 @@ function Board({ xIsNext, squares, onPlay }) {
     let status;
     if (winner) {
       status = 'Winner: ' + winner;
+      // document.getElementById('winner');
+      // winner.innerHTML = (<div>
+      //   <img src="../../assets/winner.jpg" alt="A trophy with the word Winner in a comic sans typeface" />
+      // </div>
+      // );
     } else {
       status = 'Next player: ' + (xIsNext ? 'X' : 'O');
     }
@@ -42,6 +53,21 @@ function Board({ xIsNext, squares, onPlay }) {
           <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
           <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
         </div>
+
+        {/* <div>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <img src="../../assets/winner.jpg" alt="A trophy with the word Winner in all-caps in a Comic Sans typeface"/>
+          </Modal.Body>
+          <Modal.Footer>
+
+          </Modal.Footer>
+        </Modal>
+      </div> */}
+
       </div>
     );
   }
@@ -104,8 +130,10 @@ function Game() {
       <div className="game-info">
         <ol>{moves}</ol>
       </div>
+      
     </div>
   );
 }
+
 
 export default Game;

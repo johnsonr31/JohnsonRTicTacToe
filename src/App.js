@@ -10,10 +10,6 @@ function App() {
           <Col className='heading'>
             <h1>Tic-Tac-Toe</h1>
           </Col>
-          <Col className='change-btn'>
-            
-          </Col>
-          <br />
           <br />
         </Row>
         <Row>

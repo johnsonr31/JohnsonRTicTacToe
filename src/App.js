@@ -1,17 +1,26 @@
 import './App.css';
-import Board from './Components/Board/BoardComponent';
+import Game from './Components/Board/BoardComponent';
 import { Container, Col, Row } from 'react-bootstrap';
 
 function App() {
   return (
     <div>
-      <Container>
+      <Container className='background-image-day'>
         <Row>
-          <Col>
+          <Col className='heading'>
             <h1>Tic-Tac-Toe</h1>
           </Col>
+          <Col className='change-btn'>
+            
+          </Col>
+          <br />
+          <br />
         </Row>
-      <Board />
+        <Row>
+          <Col>
+            <Game />
+          </Col>
+        </Row>
       </Container>
     </div>
   );
